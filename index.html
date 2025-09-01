@@ -3,41 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Interfonia GSM</title>
-  <meta name="description" content="Ambiente inicial de navegação para páginas de interfonia GSM, orçamentos, contato e informações.">
+  <title>GREFIL | T.I e Automação Condominial</title>
+  <meta name="description" content="GREFIL - Soluções em Tecnologia da Informação e Automação Condominial. Inovação, segurança e conectividade para seu condomínio ou empresa.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
       background: #f8fafc;
       color: #1e293b;
+      line-height: 1.6;
     }
     header {
       background: linear-gradient(135deg, #0f172a, #2563eb);
       color: white;
       text-align: center;
-      padding: 70px 20px;
+      padding: 60px 20px;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
     }
     header p {
       font-size: 1.1rem;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
     }
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       margin-top: 20px;
     }
     nav a {
       background: #facc15;
       color: #0f172a;
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
@@ -47,21 +53,31 @@
       background: #eab308;
     }
     section {
-      max-width: 1000px;
-      margin: 50px auto;
+      max-width: 1100px;
+      margin: 60px auto;
       padding: 20px;
       text-align: center;
     }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #2563eb;
+    }
+    section p {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      font-size: 1rem;
+      color: #334155;
+    }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
-      margin-top: 40px;
     }
     .card {
       background: white;
       border-radius: 15px;
-      padding: 30px;
+      padding: 25px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       transition: 0.3s;
     }
@@ -69,8 +85,12 @@
       transform: translateY(-5px);
     }
     .card h3 {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: #2563eb;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #475569;
     }
     footer {
       text-align: center;
@@ -78,50 +98,64 @@
       background: #0f172a;
       color: white;
       margin-top: 50px;
+      font-size: 0.9rem;
+    }
+    /* Responsividade */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      nav a {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🔔 Bem-vindo à Interfonia GSM</h1>
-    <p>Sua central de segurança e praticidade em Lauro de Freitas</p>
+    <h1>GREFIL</h1>
+    <p>Soluções inteligentes em T.I e Automação Condominial, levando inovação, segurança e conectividade para o seu dia a dia.</p>
     <nav>
-      <a href="produtos.html">Produtos</a>
-      <a href="orcamento.html">Orçamento</a>
+      <a href="ti.html">Tecnologia da Informação</a>
+      <a href="automacao.html">Automação Condominial</a>
       <a href="sobre.html">Sobre Nós</a>
       <a href="contato.html">Contato</a>
     </nav>
   </header>
 
   <section>
-    <h2>Explore nossas soluções</h2>
-    <p>Escolha uma das opções abaixo para navegar:</p>
+    <h2>Nossas Áreas de Atuação</h2>
+    <p>O grupo GREFIL oferece soluções completas que integram tecnologia e automação para transformar a gestão e o dia a dia em condomínios e empresas.</p>
     <div class="grid">
       <div class="card">
-        <h3>📱 Interfonia GSM</h3>
-        <p>Saiba mais sobre nosso sistema moderno de interfone sem fio.</p>
-        <a href="produtos.html">Ver detalhes</a>
+        <h3>💻 Tecnologia da Informação</h3>
+        <p>Infraestrutura de rede, servidores, suporte técnico e soluções de conectividade de alta performance.</p>
+        <a href="ti.html">Saiba mais</a>
       </div>
       <div class="card">
-        <h3>💰 Solicite um Orçamento</h3>
-        <p>Peça uma proposta personalizada diretamente pelo WhatsApp.</p>
-        <a href="orcamento.html">Solicitar</a>
+        <h3>🏢 Automação Condominial</h3>
+        <p>Controle de acesso, interfonia GSM, CFTV, portarias inteligentes e soluções modernas de segurança.</p>
+        <a href="automacao.html">Saiba mais</a>
       </div>
       <div class="card">
-        <h3>🏢 Sobre Nós</h3>
-        <p>Conheça nossa empresa e como podemos ajudar você.</p>
-        <a href="sobre.html">Saiba mais</a>
+        <h3>🤝 Consultoria Personalizada</h3>
+        <p>Projetos sob medida de acordo com as necessidades do seu condomínio ou empresa.</p>
+        <a href="sobre.html">Conheça</a>
       </div>
       <div class="card">
-        <h3>📞 Fale Conosco</h3>
-        <p>Tire suas dúvidas agora mesmo com nossa equipe.</p>
-        <a href="contato.html">Entrar em contato</a>
+        <h3>📞 Suporte e Atendimento</h3>
+        <p>Equipe preparada para atender com agilidade e eficiência em cada demanda.</p>
+        <a href="contato.html">Fale conosco</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Interfonia GSM - Lauro de Freitas | Todos os direitos reservados</p>
+    <p>© 2025 GREFIL | T.I e Automação Condominial - Todos os direitos reservados</p>
   </footer>
 </body>
 </html>
