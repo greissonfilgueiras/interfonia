@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre Nós | GREFIL - T.I e Automação Condominial</title>
+  <meta name="description" content="Conheça a GREFIL: grupo com mais de 10 anos de experiência em T.I e Automação Condominial. Missão, visão, valores, história e diferenciais."/>
+  <meta property="og:title" content="Sobre a GREFIL" />
+  <meta property="og:description" content="Mais de 10 anos entregando tecnologia e automação com qualidade e segurança em Lauro de Freitas e Salvador." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=GREFIL+-+TI+e+Automacao" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --txt:#1e293b;
+      --muted:#475569;
+      --brand:#2563eb;
+      --brand-dark:#1d4ed8;
+      --ink:#0f172a;
+      --cta:#facc15;
+      --cta-dark:#eab308;
+      --card:#ffffff;
+      --shadow:0 6px 20px rgba(0,0,0,.08);
+      --radius:16px;
+      --radius-sm:12px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      background:var(--bg);
+      color:var(--txt);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Header / Hero */
+    header{
+      background:linear-gradient(135deg, var(--ink), var(--brand));
+      color:#fff;
+      padding:22px 18px 64px;
+      position:relative;
+      overflow:hidden;
+    }
+    .brandbar{
+      max-width:1100px;margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:12px;
+    }
+    .logo{
+      display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;
+    }
+    .logo__mark{
+      width:38px;height:38px;border-radius:50%;
+      background:rgba(255,255,255,.12);
+      display:grid;place-items:center;font-weight:700;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .logo__text{font-weight:700;letter-spacing:.5px}
+    .menu-toggle{
+      display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer;
+    }
+    nav{
+      display:flex;gap:12px;flex-wrap:wrap;
+    }
+    nav a{
+      text-decoration:none;font-weight:600;
+      background:var(--cta);color:var(--ink);
+      padding:10px 16px;border-radius:10px;transition:.25s;
+    }
+    nav a:hover{background:var(--cta-dark)}
+    /* mobile menu */
+    @media (max-width: 820px){
+      .menu-toggle{display:block}
+      nav{display:none;flex-direction:column;align-items:flex-start;margin-top:12px}
+      nav.active{display:flex}
+      nav a{width:100%}
+      .brandbar{align-items:flex-start;flex-direction:column}
+    }
+
+    .hero{
+      max-width:1100px;margin:44px auto 0;padding:0 8px;text-align:left;
+    }
+    .hero h1{
+      font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:10px;font-weight:700;
+    }
+    .hero p{
+      max-width:800px;color:#e2e8f0;font-size:clamp(1rem,2vw,1.1rem);
+    }
+
+    /* Sections */
+    section{max-width:1100px;margin:56px auto;padding:0 18px}
+    .card{
+      background:var(--card);box-shadow:var(--shadow);border-radius:var(--radius);
+      padding:26px;
+    }
+    .section-title{
+      font-size:1.8rem;color:var(--brand);margin-bottom:14px;text-align:center;
+    }
+    .section-sub{max-width:820px;margin:0 auto 26px;color:var(--muted);text-align:center}
+
+    .grid{display:grid;gap:22px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 900px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.grid-3,.grid-2{grid-template-columns:1fr}}
+
+    .kv .k{font-weight:700;color:var(--brand);margin-bottom:6px}
+    .kv p{color:var(--muted)}
+
+    .pill{
+      display:inline-block;font-size:.9rem;font-weight:600;
+      background:#eef2ff;color:var(--brand);
+      padding:8px 12px;border-radius:999px;margin:6px 6px 0 0;
+    }
+
+    /* Timeline */
+    .timeline{position:relative;margin-left:6px}
+    .timeline::before{
+      content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:#cbd5e1;
+    }
+    .tl-item{position:relative;padding-left:34px;margin-bottom:18px}
+    .tl-item::before{
+      content:"";position:absolute;left:6px;top:.45rem;width:12px;height:12px;border-radius:50%;
+      background:var(--brand);
+      box-shadow:0 0 0 4px rgba(37,99,235,.15);
+    }
+    .tl-title{font-weight:700}
+    .muted{color:var(--muted)}
+
+    /* CTA */
+    .cta{
+      display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px
+    }
+    .btn{
+      display:inline-block;text-decoration:none;font-weight:700;
+      background:var(--brand);color:#fff;padding:14px 22px;border-radius:12px;transition:.25s
+    }
+    .btn:hover{background:var(--brand-dark)}
+    .btn-ghost{
+      background:#e2e8f0;color:var(--ink)
+    }
+
+    footer{
+      text-align:center;padding:22px;background:var(--ink);color:#fff;margin-top:56px;font-size:.95rem
+    }
+
+    /* A11y helpers */
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <div class="brandbar" role="navigation" aria-label="Cabeçalho">
+      <a href="index.html" class="logo" aria-label="Ir para a página inicial">
+        <span class="logo__mark">GF</span>
+        <span class="logo__text">GREFIL</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+
+      <nav id="menu">
+        <a href="index.html">Home</a>
+        <a href="ti.html">Tecnologia da Informação</a>
+        <a href="automacao.html">Automação Condominial</a>
+        <a aria-current="page" href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <h1>Sobre a GREFIL</h1>
+      <p>Somos um grupo de parceiros especialistas com mais de 10 anos de experiência em T.I e Automação Condominial e Residencial. Unimos tecnologia, segurança e eficiência para elevar o padrão de gestão e operação em condomínios e empresas da região de Lauro de Freitas e Salvador.</p>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <!-- Identidade -->
+    <section aria-labelledby="identidade">
+      <h2 id="identidade" class="section-title">Quem Somos</h2>
+      <p class="section-sub">GREFIL é uma sigla inspirada em <strong>Greisson Filgueiras</strong> e utilizada como nome fantasia do grupo. Atuamos de forma colaborativa, reunindo profissionais com competências complementares para entregar soluções ponta a ponta.</p>
+      <div class="card">
+        <div class="grid grid-3">
+          <div>
+            <div class="k">+10 anos de experiência</div>
+            <p class="muted">Trajetória consolidada em projetos de T.I e automação na região metropolitana de Salvador.</p>
+          </div>
+          <div>
+            <div class="k">Atuação Multidisciplinar</div>
+            <p class="muted">Rede de especialistas em infraestrutura, segurança eletrônica, conectividade e software.</p>
+          </div>
+          <div>
+            <div class="k">Foco em Resultado</div>
+            <p class="muted">Soluções sob medida com entrega ágil, padrão de qualidade e suporte próximo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Missão, Visão, Valores -->
+    <section aria-labelledby="mvvs">
+      <h2 id="mvvs" class="section-title">Missão, Visão e Valores</h2>
+      <p class="section-sub">Nosso direcionamento estratégico orienta cada projeto — do planejamento à operação.</p>
+      <div class="grid grid-3">
+        <div class="card kv">
+          <h3 class="k">Missão</h3>
+          <p>Levar inovação, segurança e eficiência a condomínios e empresas por meio de soluções integradas de T.I e automação, com atendimento humano e orientado a resultados.</p>
+        </div>
+        <div class="card kv">
+          <h3 class="k">Visão</h3>
+          <p>Ser referência em Lauro de Freitas, Salvador e região metropolitana em tecnologia aplicada à automação condominial, expandindo de forma sustentável para novos mercados.</p>
+        </div>
+        <div class="card kv">
+          <h3 class="k">Valores</h3>
+          <p>Confiança e transparência • Inovação contínua • Qualidade e segurança • Agilidade no atendimento • Parceria e colaboração.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section aria-labelledby="servicos">
+      <h2 id="servicos" class="section-title">O que Fazemos</h2>
+      <p class="section-sub">Integramos tecnologia da informação e automação para entregar um ecossistema completo.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Interfonia GSM</h3>
+          <p class="muted">Atendimento via celular/fixo e abertura remota ou via TAG, sem obras e com alta confiabilidade.</p>
+        </div>
+        <div class="card">
+          <h3>CFTV e Segurança</h3>
+          <p class="muted">Projetos, instalação e gestão de videomonitoramento e controle de acesso para condomínios e empresas.</p>
+        </div>
+        <div class="card">
+          <h3>Cabeamento Estruturado</h3>
+          <p class="muted">Backbone de rede, organização de racks e documentação para ambientes escaláveis.</p>
+        </div>
+        <div class="card">
+          <h3>Suporte em T.I</h3>
+          <p class="muted">Help desk, manutenção preventiva e corretiva, monitoramento e gestão de incidentes.</p>
+        </div>
+        <div class="card">
+          <h3>Servidores & Redes</h3>
+          <p class="muted">Montagem, hardening e gerenciamento de servidores, roteadores e switches.</p>
+        </div>
+        <div class="card">
+          <h3>Pentest Defensivo</h3>
+          <p class="muted">Avaliação de segurança e recomendações práticas para redução de riscos e conformidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section aria-labelledby="diferenciais">
+      <h2 id="diferenciais" class="section-title">Nossos Diferenciais</h2>
+      <p class="section-sub">Por que a GREFIL? Porque entregamos ponta a ponta com visão integrada.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Visão 360º</h3>
+          <p class="muted">Integramos T.I e automação no mesmo projeto, reduzindo retrabalho, custos e tempo de implantação.</p>
+          <span class="pill">Projeto → Execução → Suporte</span>
+        </div>
+        <div class="card">
+          <h3>Time de Parceiros Especialistas</h3>
+          <p class="muted">Rede multidisciplinar que combina experiência prática e atualização constante.</p>
+          <span class="pill">Multidisciplinar</span>
+        </div>
+        <div class="card">
+          <h3>Soluções Sob Medida</h3>
+          <p class="muted">Cada condomínio e empresa tem necessidades diferentes — personalizamos para o contexto real.</p>
+          <span class="pill">Personalização</span>
+        </div>
+        <div class="card">
+          <h3>Qualidade e Padrão</h3>
+          <p class="muted">Procedimentos, checklists e documentação para garantir padronização e rastreabilidade.</p>
+          <span class="pill">Padrão Elevado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- História / Timeline -->
+    <section aria-labelledby="historia">
+      <h2 id="historia" class="section-title">Nossa História</h2>
+      <p class="section-sub">De um grupo de amigos apaixonados por tecnologia a uma rede de especialistas focada em qualidade.</p>
+      <div class="card timeline">
+        <div class="tl-item">
+          <div class="tl-title">Início da Jornada</div>
+          <p class="muted">Parceria entre profissionais de T.I e automação para entregar serviços com padrão elevado.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Primeiros Projetos</div>
+          <p class="muted">Implantações de interfonia, CFTV e redes em condomínios e empresas da região.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Expansão e Consolidação</div>
+          <p class="muted">Ampliação do portfólio com servidores, suporte gerenciado e pentest defensivo.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Hoje</div>
+          <p class="muted">Mais de 10 anos de experiência acumulada, mantendo a essência: qualidade, segurança e proximidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Público e Atuação -->
+    <section aria-labelledby="atuacao">
+      <h2 id="atuacao" class="section-title">Para Quem Atuamos</h2>
+      <p class="section-sub">Atendemos principalmente <strong>condomínios</strong> e <strong>empresas</strong> nas regiões de Lauro de Freitas e Salvador.</p>
+      <div class="card cta">
+        <div>
+          <span class="pill">Condomínios</span>
+          <span class="pill">Empresas</span>
+          <span class="pill">Lauro de Freitas</span>
+          <span class="pill">Salvador</span>
+        </div>
+        <p class="muted">Conte com um parceiro único para tecnologia, segurança eletrônica e automação do seu ambiente.</p>
+        <div>
+          <a class="btn" href="contato.html">Falar com a GREFIL</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5571991019333?text=Olá!%20Quero%20conhecer%20melhor%20os%20serviços%20da%20GREFIL.">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 GREFIL | T.I e Automação Condominial — Todos os direitos reservados
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const nav = document.getElementById('menu');
+      const btn = document.querySelector('.menu-toggle');
+      const isOpen = nav.classList.toggle('active');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    // Fecha o menu ao clicar num link (mobile)
+    document.addEventListener('click', (e)=>{
+      const nav = document.getElementById('menu');
+      const btn = document.querySelector('.menu-toggle');
+      if(!nav.classList.contains('active')) return;
+      if(e.target.closest('#menu a')){
+        nav.classList.remove('active');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  </script>
+</body>
+</html>
