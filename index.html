@@ -3,232 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GREFIL - Início</title>
+  <title>GREFIL | T.I e Automação Condominial</title>
+  <meta name="description" content="GREFIL - Soluções em Tecnologia da Informação e Automação Condominial. Inovação, segurança e conectividade para seu condomínio ou empresa.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
       line-height: 1.6;
-      color: #333;
     }
     header {
-      background: #0a0a23;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      background: linear-gradient(135deg, #0f172a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
     }
     header h1 {
-      font-size: 1.5rem;
-      color: #00bcd4;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
     }
-    nav ul {
-      list-style: none;
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+    /* Menu padrão */
+    nav {
       display: flex;
-      gap: 20px;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
     }
     nav a {
-      color: #fff;
+      background: #facc15;
+      color: #0f172a;
+      padding: 12px 22px;
+      border-radius: 10px;
       text-decoration: none;
-      transition: color 0.3s;
+      font-weight: bold;
+      transition: 0.3s;
     }
     nav a:hover {
-      color: #00bcd4;
+      background: #eab308;
     }
+
+    /* Botão hamburguer */
     .menu-toggle {
       display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
       font-size: 1.8rem;
+      color: white;
       cursor: pointer;
     }
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #0a0a23, #1a1a40);
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
+
+    /* Menu responsivo */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
     }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #00bcd4;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    .btn {
-      display: inline-block;
-      background: #00bcd4;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #008c9e;
-    }
-    /* Seções */
+
     section {
-      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
       text-align: center;
     }
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #0a0a23;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #2563eb;
     }
-    .cards {
+    section p {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      font-size: 1rem;
+      color: #334155;
+    }
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      gap: 25px;
     }
     .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
     .card:hover {
       transform: translateY(-5px);
     }
     .card h3 {
-      margin-bottom: 15px;
-      color: #00bcd4;
+      margin-bottom: 12px;
+      color: #2563eb;
     }
-    /* CTA */
-    .cta {
-      background: #00bcd4;
-      color: #fff;
-      padding: 50px 20px;
-      text-align: center;
+    .card p {
+      font-size: 0.95rem;
+      color: #475569;
     }
-    .cta h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .cta a {
-      background: #fff;
-      color: #00bcd4;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .cta a:hover {
-      background: #f0f0f0;
-    }
-    /* Rodapé */
     footer {
-      background: #0a0a23;
-      color: #fff;
       text-align: center;
-      padding: 15px 10px;
-    }
-    /* Responsivo */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        background: #0a0a23;
-        position: absolute;
-        top: 60px;
-        left: -100%;
-        width: 100%;
-        transition: left 0.3s;
-        padding: 20px 0;
-      }
-      nav ul.active {
-        left: 0;
-      }
-      .menu-toggle {
-        display: block;
-        color: #fff;
-      }
+      padding: 20px;
+      background: #0f172a;
+      color: white;
+      margin-top: 50px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>GREFIL</h1>
-    <span class="menu-toggle">&#9776;</span>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+    <p>Soluções inteligentes em T.I e Automação Condominial, levando inovação, segurança e conectividade para o seu dia a dia.</p>
+
+    <!-- Botão Hamburguer -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <!-- Menu -->
+    <nav id="menu">
+      <a href="ti.html">Tecnologia da Informação</a>
+      <a href="automacao.html">Automação Condominial</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contato.html">Contato</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Bem-vindo à GREFIL</h2>
-    <p>Soluções em tecnologia, automação e segurança para condomínios e empresas.</p>
-    <a href="https://wa.me/5571991019333" target="_blank" class="btn">Fale Conosco</a>
-  </section>
-
-  <section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <div class="cards">
+  <section>
+    <h2>Nossas Áreas de Atuação</h2>
+    <p>O grupo GREFIL oferece soluções completas que integram tecnologia e automação para transformar a gestão e o dia a dia em condomínios e empresas.</p>
+    <div class="grid">
       <div class="card">
-        <h3>Interfonia GSM</h3>
-        <p>Comunicação prática e moderna, sem necessidade de cabeamento.</p>
+        <h3>💻 Tecnologia da Informação</h3>
+        <p>Infraestrutura de rede, servidores, suporte técnico e soluções de conectividade de alta performance.</p>
+        <a href="ti.html">Saiba mais</a>
       </div>
       <div class="card">
-        <h3>CFTV</h3>
-        <p>Monitoramento com imagens em alta definição e acesso remoto.</p>
+        <h3>🏢 Automação Condominial</h3>
+        <p>Controle de acesso, interfonia GSM, CFTV, portarias inteligentes e soluções modernas de segurança.</p>
+        <a href="automacao.html">Saiba mais</a>
       </div>
       <div class="card">
-        <h3>Automação Condominial</h3>
-        <p>Portarias inteligentes, controle de acesso e gestão integrada.</p>
+        <h3>🤝 Consultoria Personalizada</h3>
+        <p>Projetos sob medida de acordo com as necessidades do seu condomínio ou empresa.</p>
+        <a href="sobre.html">Conheça</a>
       </div>
       <div class="card">
-        <h3>Redes e Servidores</h3>
-        <p>Infraestrutura de T.I estável e escalável para empresas.</p>
-      </div>
-      <div class="card">
-        <h3>Suporte em T.I</h3>
-        <p>Atendimento rápido e especializado para manter tudo funcionando.</p>
-      </div>
-      <div class="card">
-        <h3>Pentest Defensivo</h3>
-        <p>Auditoria de segurança para proteger seus dados e sistemas.</p>
+        <h3>📞 Suporte e Atendimento</h3>
+        <p>Equipe preparada para atender com agilidade e eficiência em cada demanda.</p>
+        <a href="contato.html">Fale conosco</a>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Por que escolher a GREFIL?</h2>
-    <p>Unimos experiência em tecnologia da informação e automação para entregar soluções personalizadas e seguras.</p>
-    <p>Nosso compromisso é com a eficiência, inovação e a tranquilidade dos nossos clientes.</p>
-  </section>
-
-  <section class="cta" id="contato">
-    <h2>Pronto para evoluir seu condomínio ou empresa?</h2>
-    <a href="https://wa.me/5571991019333" target="_blank">Chamar no WhatsApp</a>
-  </section>
-
   <footer>
-    <p>&copy; 2025 GREFIL - Tecnologia e Automação. Todos os direitos reservados.</p>
+    <p>© 2025 GREFIL | T.I e Automação Condominial - Todos os direitos reservados</p>
   </footer>
 
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav ul');
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
   </script>
 </body>
 </html>
