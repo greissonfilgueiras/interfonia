@@ -1,192 +1,247 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GREFIL | T.I e Automação Condominial</title>
-  <meta name="description" content="GREFIL - Soluções em Tecnologia da Informação e Automação Condominial. Inovação, segurança e conectividade para seu condomínio ou empresa.">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | GREFIL - T.I e Automação Condominial</title>
+  <meta name="description" content="GREFIL - Grupo com mais de 10 anos em soluções de Tecnologia da Informação e Automação Condominial. Inovação, segurança e conectividade para seu condomínio ou empresa."/>
+  <meta property="og:title" content="GREFIL - T.I e Automação Condominial" />
+  <meta property="og:description" content="Soluções completas em tecnologia, segurança eletrônica e automação para condomínios e empresas em Lauro de Freitas e Salvador." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=GREFIL+-+TI+e+Automacao" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#f8fafc;
+      --txt:#1e293b;
+      --muted:#475569;
+      --brand:#2563eb;
+      --brand-dark:#1d4ed8;
+      --ink:#0f172a;
+      --cta:#facc15;
+      --cta-dark:#eab308;
+      --card:#ffffff;
+      --shadow:0 6px 20px rgba(0,0,0,.08);
+      --radius:16px;
+      --radius-sm:12px;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #0f172a, #2563eb);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-      position: relative;
-    }
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
-    header p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-    }
-    /* Menu padrão */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      background: #facc15;
-      color: #0f172a;
-      padding: 12px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background: #eab308;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      background:var(--bg);
+      color:var(--txt);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Botão hamburguer */
-    .menu-toggle {
-      display: none;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
+    /* Header / Hero */
+    header{
+      background:linear-gradient(135deg, var(--ink), var(--brand));
+      color:#fff;
+      padding:22px 18px 64px;
+      position:relative;
+      overflow:hidden;
+    }
+    .brandbar{
+      max-width:1100px;margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:12px;
+    }
+    .logo{
+      display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;
+    }
+    .logo__mark{
+      width:38px;height:38px;border-radius:50%;
+      background:rgba(255,255,255,.12);
+      display:grid;place-items:center;font-weight:700;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .logo__text{font-weight:700;letter-spacing:.5px}
+    .menu-toggle{
+      display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer;
+    }
+    nav{
+      display:flex;gap:12px;flex-wrap:wrap;
+    }
+    nav a{
+      text-decoration:none;font-weight:600;
+      background:var(--cta);color:var(--ink);
+      padding:10px 16px;border-radius:10px;transition:.25s;
+    }
+    nav a:hover{background:var(--cta-dark)}
+    /* mobile menu */
+    @media (max-width: 820px){
+      .menu-toggle{display:block}
+      nav{display:none;flex-direction:column;align-items:flex-start;margin-top:12px}
+      nav.active{display:flex}
+      nav a{width:100%}
+      .brandbar{align-items:flex-start;flex-direction:column}
     }
 
-    /* Menu responsivo */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 20px;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
+    .hero{
+      max-width:1100px;margin:44px auto 0;padding:0 8px;text-align:left;
+    }
+    .hero h1{
+      font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:10px;font-weight:700;
+    }
+    .hero p{
+      max-width:800px;color:#e2e8f0;font-size:clamp(1rem,2vw,1.1rem);
     }
 
-    section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 20px;
-      text-align: center;
+    /* Sections */
+    section{max-width:1100px;margin:56px auto;padding:0 18px}
+    .card{
+      background:var(--card);box-shadow:var(--shadow);border-radius:var(--radius);
+      padding:26px;
     }
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #2563eb;
+    .section-title{
+      font-size:1.8rem;color:var(--brand);margin-bottom:14px;text-align:center;
     }
-    section p {
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      font-size: 1rem;
-      color: #334155;
+    .section-sub{max-width:820px;margin:0 auto 26px;color:var(--muted);text-align:center}
+
+    .grid{display:grid;gap:22px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 900px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.grid-3,.grid-2{grid-template-columns:1fr}}
+
+    .kv .k{font-weight:700;color:var(--brand);margin-bottom:6px}
+    .kv p{color:var(--muted)}
+
+    .pill{
+      display:inline-block;font-size:.9rem;font-weight:600;
+      background:#eef2ff;color:var(--brand);
+      padding:8px 12px;border-radius:999px;margin:6px 6px 0 0;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+
+    /* CTA */
+    .cta{
+      display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px
     }
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      transition: 0.3s;
+    .btn{
+      display:inline-block;text-decoration:none;font-weight:700;
+      background:var(--brand);color:#fff;padding:14px 22px;border-radius:12px;transition:.25s
     }
-    .card:hover {
-      transform: translateY(-5px);
+    .btn:hover{background:var(--brand-dark)}
+    .btn-ghost{
+      background:#e2e8f0;color:var(--ink)
     }
-    .card h3 {
-      margin-bottom: 12px;
-      color: #2563eb;
+
+    footer{
+      text-align:center;padding:22px;background:var(--ink);color:#fff;margin-top:56px;font-size:.95rem
     }
-    .card p {
-      font-size: 0.95rem;
-      color: #475569;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0f172a;
-      color: white;
-      margin-top: 50px;
-      font-size: 0.9rem;
+
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
     }
   </style>
 </head>
 <body>
+  <a class="sr-only" href="#conteudo">Pular para o conteúdo</a>
+
   <header>
-    <h1>GREFIL</h1>
-    <p>Soluções inteligentes em T.I e Automação Condominial, levando inovação, segurança e conectividade para o seu dia a dia.</p>
+    <div class="brandbar" role="navigation" aria-label="Cabeçalho">
+      <a href="index.html" class="logo" aria-label="Ir para a página inicial">
+        <span class="logo__mark">GF</span>
+        <span class="logo__text">GREFIL</span>
+      </a>
 
-    <!-- Botão Hamburguer -->
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
 
-    <!-- Menu -->
-    <nav id="menu">
-      <a href="ti.html">Tecnologia da Informação</a>
-      <a href="automacao.html">Automação Condominial</a>
-      <a href="sobre.html">Sobre Nós</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+      <nav id="menu">
+        <a aria-current="page" href="index.html">Home</a>
+        <a href="ti.html">Tecnologia da Informação</a>
+        <a href="automacao.html">Automação Condominial</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <h1>Bem-vindo à GREFIL</h1>
+      <p>Mais de 10 anos entregando inovação, segurança e conectividade em T.I e Automação Condominial. Atuamos em Lauro de Freitas, Salvador e região metropolitana.</p>
+    </div>
   </header>
 
-  <section>
-    <h2>Nossas Áreas de Atuação</h2>
-    <p>O grupo GREFIL oferece soluções completas que integram tecnologia e automação para transformar a gestão e o dia a dia em condomínios e empresas.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>💻 Tecnologia da Informação</h3>
-        <p>Infraestrutura de rede, servidores, suporte técnico e soluções de conectividade de alta performance.</p>
-        <a href="ti.html">Saiba mais</a>
+  <main id="conteudo" tabindex="-1">
+    <!-- Áreas de atuação -->
+    <section aria-labelledby="areas">
+      <h2 id="areas" class="section-title">Nossas Áreas de Atuação</h2>
+      <p class="section-sub">Integramos tecnologia da informação e automação condominial para transformar o dia a dia de condomínios e empresas.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>💻 Tecnologia da Informação</h3>
+          <p class="muted">Infraestrutura de rede, servidores, suporte técnico e soluções de conectividade de alta performance.</p>
+          <a class="btn" href="ti.html">Saiba mais</a>
+        </div>
+        <div class="card">
+          <h3>🏢 Automação Condominial</h3>
+          <p class="muted">Controle de acesso, interfonia GSM, CFTV, portarias inteligentes e soluções modernas de segurança.</p>
+          <a class="btn" href="automacao.html">Saiba mais</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>🏢 Automação Condominial</h3>
-        <p>Controle de acesso, interfonia GSM, CFTV, portarias inteligentes e soluções modernas de segurança.</p>
-        <a href="automacao.html">Saiba mais</a>
+    </section>
+
+    <!-- Diferenciais -->
+    <section aria-labelledby="diferenciais">
+      <h2 id="diferenciais" class="section-title">Por que Escolher a GREFIL?</h2>
+      <p class="section-sub">Nos destacamos pela visão integrada e pela qualidade em cada entrega.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Atendimento Personalizado</h3>
+          <p class="muted">Projetos sob medida de acordo com as necessidades reais do seu condomínio ou empresa.</p>
+        </div>
+        <div class="card">
+          <h3>Equipe Especializada</h3>
+          <p class="muted">Rede de parceiros multidisciplinares com experiência prática e atualização constante.</p>
+        </div>
+        <div class="card">
+          <h3>Qualidade e Segurança</h3>
+          <p class="muted">Procedimentos padronizados, documentação e acompanhamento próximo em cada fase.</p>
+        </div>
+        <div class="card">
+          <h3>Suporte e Agilidade</h3>
+          <p class="muted">Equipe preparada para atender com eficiência e proximidade em cada demanda.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>🤝 Consultoria Personalizada</h3>
-        <p>Projetos sob medida de acordo com as necessidades do seu condomínio ou empresa.</p>
-        <a href="sobre.html">Conheça</a>
+    </section>
+
+    <!-- CTA -->
+    <section aria-labelledby="cta">
+      <h2 id="cta" class="section-title">Vamos Conversar?</h2>
+      <p class="section-sub">Conte com a GREFIL para levar inovação e segurança ao seu condomínio ou empresa.</p>
+      <div class="card cta">
+        <div>
+          <a class="btn" href="contato.html">Entre em Contato</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5571991019333?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20GREFIL.">Fale no WhatsApp</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>📞 Suporte e Atendimento</h3>
-        <p>Equipe preparada para atender com agilidade e eficiência em cada demanda.</p>
-        <a href="contato.html">Fale conosco</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 GREFIL | T.I e Automação Condominial - Todos os direitos reservados</p>
+    © 2025 GREFIL | T.I e Automação Condominial — Todos os direitos reservados
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("active");
+    function toggleMenu(){
+      const nav = document.getElementById('menu');
+      const btn = document.querySelector('.menu-toggle');
+      const isOpen = nav.classList.toggle('active');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
+    document.addEventListener('click', (e)=>{
+      const nav = document.getElementById('menu');
+      const btn = document.querySelector('.menu-toggle');
+      if(!nav.classList.contains('active')) return;
+      if(e.target.closest('#menu a')){
+        nav.classList.remove('active');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
   </script>
 </body>
 </html>
